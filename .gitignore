@@ -45,3 +45,6 @@ app/build/
 # Kotlin
 .kotlin/
 .kotlin_gradle/
+
+# Context Ai
+HABIT_TRACKER_PLAN.md

@@ -11,17 +11,28 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.compose.rememberNavController
+import com.app.habitflow.navigation.HabitNavHost
 import com.app.habitflow.ui.theme.HabitFlowTheme
+import com.app.habitflow.ui.viewmodel.HabitViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContent {
             HabitFlowTheme {
+                val navController = rememberNavController()
+                val viewModel: HabitViewModel = hiltViewModel()
+
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    HabitNavHost(
+                        navController = navController,
+                        viewModel = viewModel,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
