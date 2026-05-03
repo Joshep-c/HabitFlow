@@ -25,6 +25,11 @@ class HabitRepository @Inject constructor(
 
     suspend fun deleteHabit(habit: Habit) = habitDao.deleteHabit(habit)
 
+    suspend fun deleteHabit(habitId: Int) {
+        habitDao.deleteLogsForHabit(habitId)
+        habitDao.deleteHabitById(habitId)
+    }
+
     suspend fun toggleLog(habitId: Int, date: Long, isCompleted: Boolean) {
         val log = HabitLog(habitId = habitId, date = date)
         if (isCompleted) habitDao.deleteLog(log) else habitDao.insertLog(log)

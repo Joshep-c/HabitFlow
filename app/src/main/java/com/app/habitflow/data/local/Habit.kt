@@ -9,5 +9,6 @@ data class Habit(
     val title: String,
     val description: String = "",
     val themeColorHex: String = "#4CAF50",
-    val createdAt: Long = System.currentTimeMillis()
+    val createdAt: Long = System.currentTimeMillis(),
+    val iconKey: String = "target"
 )

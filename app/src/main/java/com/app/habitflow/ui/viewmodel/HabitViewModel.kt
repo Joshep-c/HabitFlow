@@ -45,9 +45,17 @@ class HabitViewModel @Inject constructor(
         viewModelScope.launch { prefs.saveFilter(filter) }
     }
 
-    fun addHabit(title: String, description: String, colorHex: String) {
+    fun addHabit(title: String, description: String, colorHex: String, iconKey: String) {
         viewModelScope.launch {
-            repository.addHabit(Habit(title = title, description = description, themeColorHex = colorHex))
+            repository.addHabit(
+                Habit(title = title, description = description, themeColorHex = colorHex, iconKey = iconKey)
+            )
+        }
+    }
+
+    fun deleteHabit(habitId: Int) {
+        viewModelScope.launch {
+            repository.deleteHabit(habitId)
         }
     }
 
