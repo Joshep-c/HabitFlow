@@ -1,0 +1,47 @@
+# Gradle
+.gradle/
+/build/
+
+# Android
+/local.properties
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/libraries/
+.DS_Store
+*.iml
+*.apk
+*.aar
+
+# IDE (e.g., Android Studio)
+.idea/
+.vs/
+.settings/
+
+# Local configuration
+local.properties
+.gradle/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Generated files
+build/
+app/build/
+*/build/
+*.bak
+*.stacks
+*.fdd
+*.hprof
+*.orig
+*.lock
+*.log
+*.sql
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# Kotlin
+.kotlin/
+.kotlin_gradle/
